@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Runtime outputs
+logs/
+figs/
+data/
+
+# IDE
+.vscode/
+.idea/
+
+# uv lock file
+uv.lock

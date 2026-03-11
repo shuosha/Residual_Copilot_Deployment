@@ -1,0 +1,111 @@
+[build-system]
+requires = ["setuptools==69.5.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robot-control"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch==2.1.0",
+    "torchvision==0.16.0",
+    "torchaudio==2.1.0",
+    "numpy==1.26.4",
+    "multiprocess",
+    "gymnasium>=0.29.0",
+    # rl-games has strict torch/gym pins; install separately: uv pip install --no-deps rl-games==1.6.1
+    "huggingface-hub>=0.23.0",
+    "pyquaternion>=0.9.9",
+    "matplotlib>=3.8.0",
+    "Pillow>=10.0.0",
+    "scipy==1.12.0",
+    "opencv-python==4.9.0.80",
+    "pygame>=2.6.1",
+    "transforms3d>=0.4.2",
+    "pynput>=1.8.1",
+    "sharedmemory>=1.6.0",
+    "open3d==0.18.0",
+    "sapien==2.2",
+    "pyrealsense2==2.55.1.6486",
+    "atomics>=1.0.3",
+    "xarm-python-sdk>=1.17.0",
+    "dynamixel-sdk",
+    "zmq>=0.0.0",
+    "pip>=25.2",
+    "opencv-contrib-python>=4.11.0.86",
+    "pytest>=8.4.2",
+    "kornia==0.7.2",
+    "imageio==2.34.0",
+    "imageio-ffmpeg>=0.6.0",
+    "pyqt5>=5.15.11",
+    # nvdiffrast requires torch at build time; install separately: uv pip install git+https://github.com/NVlabs/nvdiffrast.git
+    "trimesh==4.2.2",
+    "psutil>=5.9.0",
+    "fvcore==0.1.5.post20221221",
+    "transformations==2024.6.1",
+    "ruamel-yaml==0.18.6",
+    "jupyterlab==4.1.5",
+    "ipywidgets==8.1.2",
+    "scikit-learn==1.4.1.post1",
+    "scikit-image==0.22.0",
+    "pyyaml==6.0.1",
+    "ninja==1.11.1.1",
+    "h5py==3.10.0",
+    "numba==0.59.1",
+    "pybind11==2.12.0",
+    "plotly==5.20.0",
+    "pyglet==1.5.28",
+    "pysdf==0.1.9",
+    "xatlas==0.0.9",
+    "rtree==1.2.0",
+    "pyrender==0.1.45",
+    "pyopengl>=3.1.0",
+    "pyopengl-accelerate>=3.1.0",
+    "meshcat==0.3.2",
+    "webdataset==0.2.86",
+    "omegaconf==2.3.0",
+    "pypng==0.20220715.0",
+    "panda3d==1.10.14",
+    "simplejson==3.19.2",
+    "bokeh==3.4.0",
+    "roma==1.4.4",
+    "seaborn==0.13.2",
+    "pin==2.7.0",
+    "openpyxl==3.1.2",
+    "wandb>=0.12.11",
+    "colorama==0.4.6",
+    "gputil==1.4.0",
+    "imgaug==0.4.0",
+    "xlsxwriter==3.2.0",
+    "timm==0.9.16",
+    "albumentations==1.4.2",
+    "nodejs==0.1.1",
+    "objaverse==0.1.7",
+    "g4f==0.2.7.1",
+    "ultralytics==8.0.120",
+    "pycocotools==2.0.7",
+    "py-spy==0.3.14",
+    "pybullet==3.2.6",
+    "videoio==0.2.8",
+    "einops==0.7.0",
+    "joblib==1.3.2",
+    "warp-lang==1.0.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["robot_control*", "third_party*"]
+
+[tool.uv.sources]
+dynamixel-sdk = { path = "src/third_party/DynamixelSDK/python" }
+nvdiffrast = { git = "https://github.com/NVlabs/nvdiffrast.git" }
+torch = { index = "pytorch-cu121" }
+torchvision = { index = "pytorch-cu121" }
+torchaudio = { index = "pytorch-cu121" }
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true

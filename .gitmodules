@@ -1,0 +1,7 @@
+[submodule "src/third_party/DynamixelSDK"]
+	path = src/third_party/DynamixelSDK
+	url = https://github.com/ROBOTIS-GIT/DynamixelSDK.git
+
+[submodule "src/third_party/librealsense"]
+	path = src/third_party/librealsense
+	url = https://github.com/IntelRealSense/librealsense.git
